@@ -99,16 +99,16 @@ const ExperienceSection = ({ darkMode }) => {
               <div key={exp.id} className="relative">
                 {/* Timeline Dot */}
                 <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
-                  className={`absolute left-0 md:left-1/2 w-5 h-5 rounded-full border-4 ${
-                    darkMode 
-                      ? 'bg-gray-900 border-blue-500' 
-                      : 'bg-white border-blue-600'
-                  } transform -translate-x-1/2 z-10`}
-                ></motion.div>
+                initial={{ scale: 0, x: '-50%' }}
+                whileInView={{ scale: 1, x: '-50%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className={`absolute left-0 md:left-1/2 w-5 h-5 rounded-full border-4 ${
+                  darkMode 
+                  ? 'bg-gray-900 border-blue-500' 
+                  : 'bg-white border-blue-600'
+                } top-0 z-10`}
+              ></motion.div>
                 
                 {/* Experience Card */}
                 <motion.div

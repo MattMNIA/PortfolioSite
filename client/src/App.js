@@ -44,12 +44,12 @@ const App = () => {
                 <h2 className="text-xl font-bold">
                   <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>DEV</span>Portfolio
                 </h2>
-                <p className="mt-2 opacity-80">Designed & Built with React</p>
+                <p className="mt-2 opacity-80">Built with React</p>
               </div>
               
               <div className="flex space-x-6 items-center">
                 <motion.a 
-                  href="https://github.com" 
+                  href="https://github.com/MattMNIA" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
@@ -58,7 +58,7 @@ const App = () => {
                   <SiGithub size={20} />
                 </motion.a>
                 <motion.a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/mattmn/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
@@ -67,26 +67,17 @@ const App = () => {
                   <Linkedin size={20} />
                 </motion.a>
                 <motion.a 
-                  href="mailto:example@email.com"
+                  href="mailto:mattmn@iastate.edu"
                   whileHover={{ y: -3 }}
                   className="opacity-80 hover:opacity-100"
                 >
                   <Mail size={20} />
                 </motion.a>
-                <motion.a 
-                  href="https://codepen.io"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  whileHover={{ y: -3 }}
-                  className="opacity-80 hover:opacity-100"
-                >
-                  <Code size={20} />
-                </motion.a>
               </div>
             </div>
             
             <div className="mt-8 text-center">
-              <p className="opacity-60 text-sm">© {new Date().getFullYear()} Alex Chen. All rights reserved.</p>
+              <p className="opacity-60 text-sm">© {new Date().getFullYear()} Matthew Morgan. All rights reserved.</p>
             </div>
           </div>
         </footer>

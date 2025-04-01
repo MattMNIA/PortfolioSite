@@ -178,7 +178,7 @@ const ProjectsSection = ({ darkMode }) => {
           className="mt-12 text-center"
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/MattMNIA"
             target="_blank"
             rel="noopener noreferrer"
             className={`inline-flex items-center px-6 py-3 rounded-lg ${

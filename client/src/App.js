@@ -4,7 +4,7 @@ import HomePage from './sections/HomePage';
 import ProjectsSection from './sections/ProjectsSection';
 import SkillsSection from './sections/SkillsSection';
 import ExperienceSection from './sections/ExperienceSection';
-import { ChevronUp, Linkedin, Mail, Code } from 'lucide-react';
+import { ChevronUp, Linkedin, Mail } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 
 

@@ -8,46 +8,46 @@ const ProjectsSection = ({ darkMode }) => {
   const [expandedProject, setExpandedProject] = useState(null);
   
   const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce application with admin dashboard, payment processing, and inventory management.",
-      longDescription: "A comprehensive e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, product search and filtering, shopping cart functionality, Stripe payment integration, order tracking, and an admin dashboard for inventory and order management.",
-      image: "ecommerce",
-      techStack: ["React", "Node.js", "Express", "MongoDB", "Redux", "Stripe API"],
-      githubLink: "https://github.com",
-      liveLink: "https://example.com",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates and team functionality.",
-      longDescription: "A task management solution designed for teams with real-time updates using Socket.io. The app includes features like task creation, assignment, priority setting, deadlines, comments, file attachments, and team collaboration tools.",
-      image: "taskapp",
-      techStack: ["React", "TypeScript", "Node.js", "Socket.io", "PostgreSQL", "Docker"],
-      githubLink: "https://github.com",
-      liveLink: "https://example.com",
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "Interactive weather application with forecast data, location search, and interactive visualizations.",
-      longDescription: "A weather application that provides current conditions and forecasts for any location worldwide. Features include location search, geolocation detection, 7-day forecasts, hourly predictions, weather maps with various data layers, and historical weather data comparison.",
-      image: "weather",
-      techStack: ["React", "D3.js", "OpenWeather API", "Leaflet", "Tailwind CSS"],
-      githubLink: "https://github.com",
-      liveLink: "https://example.com",
-    },
-    {
-      id: 4,
-      title: "Fitness Tracker",
-      description: "Mobile-responsive fitness application for tracking workouts, nutrition, and personal goals.",
-      longDescription: "A comprehensive fitness tracker that allows users to log workouts, track nutrition, set goals, and visualize progress over time. The app includes workout templates, custom exercise creation, calorie tracking, body measurements, and achievement badges.",
-      image: "fitness",
-      techStack: ["React Native", "Firebase", "Redux", "Chart.js", "Google Fit API"],
-      githubLink: "https://github.com",
-      liveLink: "https://example.com",
-    }
+      {
+        "id": 1,
+        "title": "Camera-Based Golf Simulator",
+        "description": "Computer vision application for tracking golf ball trajectory and speed.",
+        "longDescription": "Developed a Python and OpenCV-based application that applies multiple filters to identify a golf ball in each frame of a slow-motion video. Utilized ball location data to calculate the trajectory and speed immediately after impact.",
+        "image": "client/public/golf_simulator.jpg",
+        "techStack": ["Python", "OpenCV"],
+        "githubLink": "https://github.com/MattMNIA/Golf_Simulator",
+        "liveLink": ""
+      },
+      {
+        "id": 2,
+        "title": "Automated Scheduling System",
+        "description": "Automated scheduling tool for improving efficiency at Bear Paddle Swim School.",
+        "longDescription": "Created a Python-based automation system using Google Sheets API to streamline scheduling tasks, identify overbooked classes, and improve service quality by minimizing human error.",
+        "image": "client/public/schedule_system.png",
+        "techStack": ["Python", "Google Sheets API"],
+        "githubLink": "https://github.com/MattMNIA/scheduling-system",
+        "liveLink": ""
+      },
+      {
+        "id": 3,
+        "title": "Sudoku Solver",
+        "description": "Computer vision-based Sudoku solver using OCR and backtracking.",
+        "longDescription": "Utilized OpenCV to identify and isolate individual cells in a Sudoku puzzle. Applied EasyOCR to recognize digits and implemented a backtracking algorithm to efficiently solve the puzzle.",
+        "image": "client/public/sudoku.png",
+        "techStack": ["Python", "OpenCV", "EasyOCR"],
+        "githubLink": "https://github.com/MattMNIA/sudoku-solver",
+        "liveLink": ""
+      },
+      {
+        "id": 4,
+        "title": "CourseCritic",
+        "description": "A RateMyProfessor alternative that helps students make informed course decisions.",
+        "longDescription": "Developed a full-stack web application that allows college students to view and share course ratings, helping them make better enrollment decisions. The platform features user-submitted reviews, professor ratings, and course difficulty analysis. Data was collected using a Selenium web scraper and stored in a MySQL database for efficient querying.",
+        "image": "client/public/course_critic.png",
+        "techStack": ["React", "Node.js", "MySQL", "Selenium"],
+        "githubLink": "https://github.com/MattMNIA/coursecritic",
+        "liveLink": ""
+      }
   ];
 
   const container = {
@@ -99,10 +99,12 @@ const ProjectsSection = ({ darkMode }) => {
               className={`rounded-xl overflow-hidden ${darkMode ? 'bg-gray-900' : 'bg-white'} shadow-lg transition-all duration-300`}
               whileHover={{ y: -10 }}
             >
-              <div 
-                className={`h-48 bg-blue-300 flex items-center justify-center text-2xl font-bold ${darkMode ? 'text-gray-800' : 'text-gray-700'}`}
-              >
-                {project.image}
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={project.image.replace('client/public/', '/')} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
@@ -143,27 +145,6 @@ const ProjectsSection = ({ darkMode }) => {
                   >
                     {expandedProject === project.id ? 'Show Less' : 'Learn More'}
                   </button>
-                  
-                  <div className="flex space-x-3">
-                    <motion.a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -3 }}
-                      className={`p-2 rounded-full ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
-                    >
-                      <SiGithub size={20} />
-                    </motion.a>
-                    <motion.a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -3 }}
-                      className={`p-2 rounded-full ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
-                    >
-                      <ExternalLink size={20} />
-                    </motion.a>
-                  </div>
                 </div>
               </div>
             </motion.div>

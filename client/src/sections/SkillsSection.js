@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const SkillsSection = ({ darkMode }) => {
-  const [activeCategory, setActiveCategory] = useState('frontend');
+  const [activeCategory, setActiveCategory] = useState('ml');
   
   const skillCategories = [
+    { id: 'ml', name: 'ML/AI'},
     { id: 'frontend', name: 'Frontend' },
     { id: 'backend', name: 'Backend' },
     { id: 'tools', name: 'Tools & DevOps' },
@@ -12,37 +13,40 @@ const SkillsSection = ({ darkMode }) => {
   ];
   
   const skills = {
+    ml: [
+      { name: 'OpenCV', level: 80 },
+      { name: 'Pytorch', level: 75 },
+      { name: 'Generative AI', level: 90 },
+      { name: 'Agentic AI', level: 85 },
+      { name: 'Pandas', level: 70 },
+      { name: 'Numpy', level: 75 }
+    ],
     frontend: [
       { name: 'React', level: 95 },
       { name: 'JavaScript', level: 90 },
       { name: 'TypeScript', level: 85 },
       { name: 'HTML/CSS', level: 90 },
-      { name: 'Redux', level: 80 },
-      { name: 'Next.js', level: 75 },
-      { name: 'Tailwind CSS', level: 85 },
-      { name: 'SASS/SCSS', level: 70 },
+      { name: 'Bootstrap CSS', level: 85 },
     ],
     backend: [
       { name: 'Node.js', level: 80 },
+      { name: 'Flask', level: 75 },
       { name: 'Express', level: 85 },
       { name: 'MongoDB', level: 75 },
-      { name: 'PostgreSQL', level: 70 },
-      { name: 'GraphQL', level: 65 },
       { name: 'REST APIs', level: 90 },
-      { name: 'Firebase', level: 80 },
+      { name: 'MySQL', level: 95 },
     ],
     tools: [
       { name: 'Git', level: 90 },
       { name: 'Docker', level: 75 },
       { name: 'CI/CD', level: 70 },
-      { name: 'AWS', level: 65 },
-      { name: 'Webpack', level: 75 },
-      { name: 'Jest/Testing', level: 80 },
-      { name: 'Agile/Scrum', level: 85 },
+      { name: 'Azure', level: 70 },
+      { name: 'Junit/Testing', level: 80 },
     ],
     other: [
       { name: 'UI/UX Design', level: 70 },
       { name: 'Performance Optimization', level: 80 },
+      { name: 'Algorithms', level: 80 },
       { name: 'SEO', level: 65 },
       { name: 'Technical Writing', level: 75 },
       { name: 'Accessibility', level: 70 },
@@ -87,12 +91,15 @@ const SkillsSection = ({ darkMode }) => {
         </motion.div>
         
         {/* Skill Categories */}
-        <div className="flex justify-center mb-12 overflow-x-auto">
+        <div className="flex justify-center mb-12 overflow-x-auto overflow-y-hidden">
           <div className="flex space-x-2 md:space-x-4">
             {skillCategories.map((category) => (
               <motion.button
                 key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => {
+                  setActiveCategory(category.id)
+                  console.log(category)
+                  }}
                 className={`px-4 py-2 rounded-full text-sm md:text-base whitespace-nowrap ${
                   activeCategory === category.id
                     ? darkMode 
@@ -113,6 +120,7 @@ const SkillsSection = ({ darkMode }) => {
         
         {/* Skill Bars */}
         <motion.div
+          key={activeCategory}
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -156,10 +164,10 @@ const SkillsSection = ({ darkMode }) => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { title: "Frontend Dev", value: "4+ Years", icon: "🖥️" },
+              { title: "Frontend Dev", value: "2+ Years", icon: "🖥️" },
               { title: "Backend Dev", value: "3+ Years", icon: "⚙️" },
-              { title: "Mobile Dev", value: "2+ Years", icon: "📱" },
-              { title: "DevOps", value: "2+ Years", icon: "🔄" }
+              { title: "Gen AI", value: "2+ Years", icon: "🤖" },        
+              { title: "Computer Vision", value: "2+ Years", icon: "👁️" } 
             ].map((card, index) => (
               <motion.div
                 key={card.title}

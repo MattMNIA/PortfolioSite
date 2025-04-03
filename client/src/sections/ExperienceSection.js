@@ -5,64 +5,50 @@ import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 const ExperienceSection = ({ darkMode }) => {
   const experiences = [
     {
-      id: 1,
-      role: "Senior Frontend Developer",
-      company: "TechCorp Solutions",
-      period: "Jan 2023 - Present",
-      location: "San Francisco, CA",
-      description: "Lead the frontend development team for enterprise SaaS applications. Implemented new React component library that reduced development time by 40%. Optimized application performance, reducing load times by 60%.",
-      achievements: [
-        "Architected and implemented a company-wide design system using React and Storybook",
-        "Led migration from Redux to React Query, improving data fetching performance",
-        "Mentored junior developers and conducted code reviews to maintain high code quality",
-        "Collaborated with UX team to implement accessibility improvements across all products"
+      "id": 1,
+      "role": "Head Intern of Digital Innovation",
+      "company": "Ecolab",
+      "period": "March 2025 - Present",
+      "location": "Remote (During School) & On-Site (Summer)",
+      "description": "Lead AI-driven innovation projects, specializing in Generative AI Engineering and full-stack development. Work part-time remotely during the school year and will lead a team of interns on a high-impact project during the summer.",
+      "achievements": [
+        "Promoted to Head Intern of Digital Innovation after a stellar first internship.",
+        "Developed AI prototypes that were demoed to Ecolab’s Board of Directors.",
+        "Helped define the innovation process within the company, working closely with senior leadership.",
+        "Created full-stack AI-driven applications to optimize business operations.",
+        "Will lead a team of interns on a summer project expected to be presented to top executives."
       ],
-      technologies: ["React", "TypeScript", "GraphQL", "Webpack", "Jest", "CI/CD"]
+      "technologies": ["Python", "Azure", "TensorFlow", "OpenAI API", "Flask", "React", "Node.js", "Docker", "MySQL"]
     },
     {
-      id: 2,
-      role: "Full Stack Developer",
-      company: "InnovateLabs",
-      period: "Mar 2021 - Dec 2022",
-      location: "Austin, TX",
-      description: "Developed and maintained multiple web applications for clients in finance and healthcare sectors. Created responsive interfaces and RESTful APIs with a focus on security and scalability.",
-      achievements: [
-        "Built secure authentication system with multi-factor authentication",
-        "Developed custom CMS for healthcare client, reducing content update time by 75%",
-        "Implemented real-time notification system using WebSockets",
-        "Optimized database queries, improving API response times by 40%"
+      "id": 1,
+      "role": "Artificial Intelligence Intern",
+      "company": "Ecolab",
+      "period": "May 2024 - March 2025",
+      "location": "Naperville, IL",
+      "description": "Developed AI solutions for high-impact business applications, including a Generative AI prototype for a major customer demo.",
+      "achievements": [
+        "Built an AI product identifying millions in missing Total Value Delivered.",
+        "Created a rapid prototyping AI environment for iterative development.",
+        "Collaborated with SMEs across divisions to accelerate AI innovation.",
+        "Successfully delivered an AI prototype to Ecolab’s Board of Directors.",
+        "Developed a dashboard for field representatives to help customers identify areas of improvement."
       ],
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Redis", "Docker"]
+      "technologies": ["Python", "Scikit-Learn", "TensorFlow", "Pandas", "NumPy", "Flask"]
     },
     {
-      id: 3,
-      role: "Software Developer",
-      company: "WebSoft Inc.",
-      period: "Jun 2019 - Feb 2021",
-      location: "Seattle, WA",
-      description: "Worked on e-commerce platform serving 50K+ monthly users. Implemented new features and fixed bugs across frontend and backend codebases.",
-      achievements: [
-        "Developed shopping cart and checkout process with multiple payment integrations",
-        "Created admin dashboard for inventory and order management",
-        "Implemented automated testing strategy, increasing code coverage to 80%",
-        "Participated in agile development process with two-week sprint cycles"
+      "id": 2,
+      "role": "Deck Specialist",
+      "company": "Bear Paddle Swim School",
+      "period": "April 2022 - September 2023",
+      "location": "Aurora, IL",
+      "description": "Led team meetings, coached instructors, and improved service quality through direct customer feedback.",
+      "achievements": [
+        "Organized and led team meetings to improve lesson quality.",
+        "Mentored new instructors to enhance teaching effectiveness.",
+        "Communicated with customers to gather feedback and refine services."
       ],
-      technologies: ["JavaScript", "Vue.js", "PHP", "MySQL", "AWS", "Jenkins"]
-    },
-    {
-      id: 4,
-      role: "Junior Web Developer",
-      company: "Digital Creations",
-      period: "Aug 2018 - May 2019",
-      location: "Chicago, IL",
-      description: "Assisted in the development of websites and web applications for small to medium-sized businesses. Focused on frontend implementation and responsive design.",
-      achievements: [
-        "Developed frontend components for 10+ client websites",
-        "Created custom WordPress themes and plugins",
-        "Implemented responsive designs ensuring cross-browser compatibility",
-        "Collaborated with designers to implement pixel-perfect interfaces"
-      ],
-      technologies: ["HTML/CSS", "JavaScript", "jQuery", "WordPress", "SASS", "Git"]
+      "technologies": []
     }
   ];
 
@@ -168,28 +154,6 @@ const ExperienceSection = ({ darkMode }) => {
             ))}
           </div>
         </div>
-        
-        {/* Call To Action */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <motion.a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center px-6 py-3 rounded-lg ${
-              darkMode ? 'bg-blue-500 hover:bg-blue-600' : 'bg-blue-600 hover:bg-blue-700'
-            } text-white font-semibold`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Download Full Resume <ExternalLink size={20} className="ml-2" />
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );

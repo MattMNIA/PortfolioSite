@@ -140,11 +140,19 @@ const HomePage = ({ darkMode, setDarkMode }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5, delay: 0.6 }}
               >
-                Full Stack Developer
+                Full Stack Developer/
+              </motion.span>
+              <br />
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, delay: 0.6 }}
+              >
+                AI Engineer
               </motion.span>
             </h2>
             <p className="text-lg mb-8 max-w-lg opacity-90">
-              I build modern web applications with a focus on performance and user experience. Passionate about clean code, innovative solutions, and continuous learning.
+              I build modern web applications to display my work. I'm Passionate about computer vision, driving revenue using AI, and continuous learning.
             </p>
             <div className="flex space-x-4 mb-8">
               <motion.a

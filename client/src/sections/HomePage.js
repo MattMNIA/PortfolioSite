@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, Moon, Sun, ExternalLink, ChevronRight } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
+import { TypeAnimation } from 'react-type-animation'
 
 
 const HomePage = ({ darkMode, setDarkMode }) => {
@@ -140,16 +141,28 @@ const HomePage = ({ darkMode, setDarkMode }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5, delay: 0.6 }}
               >
-                Full Stack Developer/
+                <div style={{ fontSize: '2.5rem', display: 'inline-block' }}>I am a&nbsp;</div>
+                <TypeAnimation
+                  sequence={[
+                    ' ML/AI Engineer.',
+                    1000,
+                    ' Full Stack Developer.',
+                    1000,
+                    ' Data Scientist.',
+                    1000,
+                    ' Data Engineer.',
+                    1000,
+                    ' Data Analyst.',
+                    1000
+                  ]}
+                  wrapper="div"
+                  speed={10}
+                  style={{ fontSize: '2.5rem', display: 'inline-block' }}
+                  repeat={Infinity}
+                />
               </motion.span>
               <br />
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.5, delay: 0.6 }}
-              >
-                AI Engineer
-              </motion.span>
+
             </h2>
             <p className="text-lg mb-8 max-w-lg opacity-90">
               I build modern web applications to display my work. I'm Passionate about computer vision, driving revenue using AI, and continuous learning.
@@ -201,6 +214,7 @@ const HomePage = ({ darkMode, setDarkMode }) => {
           >
             <div className={`w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 ${darkMode ? 'border-blue-500' : 'border-blue-600'}`}>
               <div className="w-full h-full bg-blue-300 flex items-center justify-center text-5xl font-bold">
+                {/* <img src="/myAvatar.svg" alt="My Avatar" className="w-full h-full object-cover" /> */}
                 MM
               </div>
             </div>

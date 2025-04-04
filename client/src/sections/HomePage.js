@@ -46,7 +46,7 @@ const HomePage = ({ darkMode, setDarkMode }) => {
             transition={{ duration: 0.5 }}
             className="text-xl font-bold"
           >
-            <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>DEV</span>Portfolio
+            <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Matthew</span> Morgan
           </motion.div>
 
           {/* Desktop Navigation */}

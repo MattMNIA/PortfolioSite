@@ -46,7 +46,7 @@ const HomePage = ({ darkMode, setDarkMode }) => {
             transition={{ duration: 0.5 }}
             className="text-xl font-bold"
           >
-            <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Matthew</span> Morgan
+            <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Matthew Morgan</span> 
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -117,104 +117,102 @@ const HomePage = ({ darkMode, setDarkMode }) => {
           </motion.div>
         )}
       </nav>
+        <motion.section
+          id="about"
+          className="min-h-screen flex flex-col justify-center pt-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+            >
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            Hi, I'm <span className={darkMode ? 'text-blue-400' : 'text-blue-600'}>Matthew Morgan</span>
+          </h1>
+          <h2 className="text-xl md:text-2xl font-semibold mb-6">
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.6 }}
+            >
+              <div style={{ fontSize: '1.5rem', display: 'inline-block' }}>I am a&nbsp;</div>
+              <TypeAnimation
+            sequence={[
+              ' ML/AI Engineer.',
+              1000,
+              ' Full Stack Developer.',
+              1000,
+              ' Data Scientist.',
+              1000,
+              ' Data Engineer.',
+              1000,
+              ' Data Analyst.',
+              1000
+            ]}
+            wrapper="div"
+            speed={10}
+            style={{ fontSize: '1.5rem', display: 'inline-block' }}
+            repeat={Infinity}
+              />
+            </motion.span>
+            <br />
 
-      {/* Hero Section */}
-      <motion.section
-        id="about"
-        className="min-h-screen flex flex-col justify-center pt-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Hi, I'm <span className={darkMode ? 'text-blue-400' : 'text-blue-600'}>Matthew Morgan</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.5, delay: 0.6 }}
-              >
-                <div style={{ fontSize: '2.5rem', display: 'inline-block' }}>I am a&nbsp;</div>
-                <TypeAnimation
-                  sequence={[
-                    ' ML/AI Engineer.',
-                    1000,
-                    ' Full Stack Developer.',
-                    1000,
-                    ' Data Scientist.',
-                    1000,
-                    ' Data Engineer.',
-                    1000,
-                    ' Data Analyst.',
-                    1000
-                  ]}
-                  wrapper="div"
-                  speed={10}
-                  style={{ fontSize: '2.5rem', display: 'inline-block' }}
-                  repeat={Infinity}
-                />
-              </motion.span>
-              <br />
-
-            </h2>
-            <p className="text-lg mb-8 max-w-lg opacity-90">
-              I build modern web applications to display my work. I'm Passionate about computer vision, driving revenue using AI, and continuous learning.
-            </p>
-            <div className="flex space-x-4 mb-8">
-              <motion.a
-                href="https://github.com/MattMNIA"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5 }}
-                className={`p-3 rounded-full ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors flex items-center justify-center`}
-              >
-                <SiGithub size={20} />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/mattmn/"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5 }}
-                className={`p-3 rounded-full ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}
-              >
-                <Linkedin />
-              </motion.a>
-              <motion.a
-                href="mailto:mattmn@iastate.edu"
-                whileHover={{ y: -5 }}
-                className={`p-3 rounded-full ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}
-              >
-                <Mail />
-              </motion.a>
-            </div>
+          </h2>
+          <p className="text-base mb-8 max-w-lg opacity-90">
+            I build modern web applications to display my work. I'm passionate about utilizing computer vision, driving revenue using AI, and continuously learning.
+          </p>
+          <div className="flex space-x-4 mb-8">
             <motion.a
-              href="/Matthew_Morgan_Resume.pdf"
+              href="https://github.com/MattMNIA"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-lg ${darkMode ? 'bg-blue-500 hover:bg-blue-600' : 'bg-blue-600 hover:bg-blue-700'} text-white font-semibold flex items-center`}
+              whileHover={{ y: -5 }}
+              className={`p-3 rounded-full ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors flex items-center justify-center`}
             >
-              View Resume <ExternalLink size={18} className="ml-2" />
+              <SiGithub size={20} />
             </motion.a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex justify-center"
+            <motion.a
+              href="https://www.linkedin.com/in/mattmn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -5 }}
+              className={`p-3 rounded-full ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}
+            >
+              <Linkedin />
+            </motion.a>
+            <motion.a
+              href="mailto:mattmn@iastate.edu"
+              whileHover={{ y: -5 }}
+              className={`p-3 rounded-full ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}
+            >
+              <Mail />
+            </motion.a>
+          </div>
+          <motion.a
+            href="/Matthew_Morgan_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`px-6 py-3 rounded-lg ${darkMode ? 'bg-blue-500 hover:bg-blue-600' : 'bg-blue-600 hover:bg-blue-700'} text-white font-semibold flex items-center`}
           >
-            <div className={`w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 ${darkMode ? 'border-blue-500' : 'border-blue-600'}`}>
-              <div className="w-full h-full bg-blue-300 flex items-center justify-center text-5xl font-bold">
-                {/* <img src="/myAvatar.svg" alt="My Avatar" className="w-full h-full object-cover" /> */}
+            View Resume <ExternalLink size={18} className="ml-2" />
+          </motion.a>
+            </motion.div>
+
+            <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex justify-center"
+            >
+          <div className={`w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 ${darkMode ? 'border-blue-500' : 'border-blue-600'}`}>
+            <div className="w-full h-full bg-blue-300 flex items-center justify-center text-5xl font-bold">
+              {/* <img src="/myAvatar.svg" alt="My Avatar" className="w-full h-full object-cover" /> */}
                 MM
               </div>
             </div>

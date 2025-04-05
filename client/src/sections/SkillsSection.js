@@ -14,43 +14,43 @@ const SkillsSection = ({ darkMode }) => {
   
   const skills = {
     ml: [
-      { name: 'OpenCV', level: 80 },
-      { name: 'Pytorch', level: 75 },
-      { name: 'Generative AI', level: 90 },
-      { name: 'Agentic AI', level: 85 },
-      { name: 'Pandas', level: 70 },
-      { name: 'Numpy', level: 75 }
+      { name: 'OpenCV' },
+      { name: 'Pytorch' },
+      { name: 'Generative AI' },
+      { name: 'Agentic AI' },
+      { name: 'Pandas' },
+      { name: 'Numpy' }
     ],
     frontend: [
-      { name: 'React', level: 95 },
-      { name: 'JavaScript', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'HTML/CSS', level: 90 },
-      { name: 'Bootstrap CSS', level: 85 },
+      { name: 'React' },
+      { name: 'JavaScript' },
+      { name: 'TypeScript' },
+      { name: 'HTML/CSS' },
+      { name: 'Bootstrap CSS' },
     ],
     backend: [
-      { name: 'Node.js', level: 80 },
-      { name: 'Flask', level: 75 },
-      { name: 'Express', level: 85 },
-      { name: 'MongoDB', level: 75 },
-      { name: 'REST APIs', level: 90 },
-      { name: 'MySQL', level: 95 },
+      { name: 'Node.js' },
+      { name: 'Flask' },
+      { name: 'Express' },
+      { name: 'MongoDB' },
+      { name: 'REST APIs' },
+      { name: 'MySQL' },
     ],
     tools: [
-      { name: 'Git', level: 90 },
-      { name: 'Docker', level: 75 },
-      { name: 'CI/CD', level: 70 },
-      { name: 'Azure', level: 70 },
-      { name: 'Junit/Testing', level: 80 },
+      { name: 'Git' },
+      { name: 'Docker' },
+      { name: 'CI/CD' },
+      { name: 'Azure' },
+      { name: 'Junit/Testing' },
     ],
     other: [
-      { name: 'UI/UX Design', level: 70 },
-      { name: 'Performance Optimization', level: 80 },
-      { name: 'Algorithms', level: 80 },
-      { name: 'SEO', level: 65 },
-      { name: 'Technical Writing', level: 75 },
-      { name: 'Accessibility', level: 70 },
-      { name: 'Problem Solving', level: 90 },
+      { name: 'UI/UX Design' },
+      { name: 'Performance Optimization' },
+      { name: 'Algorithms' },
+      { name: 'SEO' },
+      { name: 'Technical Writing' },
+      { name: 'Accessibility' },
+      { name: 'Problem Solving' },
     ],
   };
   
@@ -118,36 +118,23 @@ const SkillsSection = ({ darkMode }) => {
           </div>
         </div>
         
-        {/* Skill Bars */}
+        {/* Skill Items - Modified to remove percentages */}
         <motion.div
           key={activeCategory}
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-x-12 gap-y-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
         >
           {skills[activeCategory].map((skill, index) => (
             <motion.div
               key={skill.name}
               variants={itemVariants}
-              className="mb-4"
+              whileHover={{ scale: 1.05 }}
+              className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} flex items-center justify-center shadow-md`}
             >
-              <div className="flex justify-between mb-2">
-                <span className="font-medium">{skill.name}</span>
-                <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>{skill.level}%</span>
-              </div>
-              <div 
-                className={`h-2 w-full rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}
-              >
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: index * 0.1 }}
-                  className={`h-full rounded-full ${darkMode ? 'bg-blue-500' : 'bg-blue-600'}`}
-                ></motion.div>
-              </div>
+              <span className="font-medium text-center">{skill.name}</span>
             </motion.div>
           ))}
         </motion.div>

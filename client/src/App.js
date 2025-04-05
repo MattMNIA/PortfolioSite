@@ -42,7 +42,7 @@ const App = () => {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-6 md:mb-0">
                 <h2 className="text-xl font-bold">
-                  <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Matthew</span> Morgan
+                  <span className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Matthew Morgan</span> 
                 </h2>
                 <p className="mt-2 opacity-80">Built with React</p>
               </div>

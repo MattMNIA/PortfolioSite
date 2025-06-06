@@ -100,15 +100,15 @@ const SkillsSection = ({ darkMode }) => {
                   setActiveCategory(category.id)
                   console.log(category)
                   }}
-                className={`px-4 py-2 rounded-full text-sm md:text-base whitespace-nowrap ${
+                className={`px-6 py-3 rounded-lg text-sm md:text-base font-semibold whitespace-nowrap border-2 transition-all duration-200 ${
                   activeCategory === category.id
                     ? darkMode 
-                      ? 'bg-blue-500 text-white' 
-                      : 'bg-blue-600 text-white'
+                      ? 'bg-blue-500 text-white border-blue-500 shadow-lg' 
+                      : 'bg-blue-600 text-white border-blue-600 shadow-lg'
                     : darkMode
-                      ? 'bg-gray-800 hover:bg-gray-700 text-gray-200'
-                      : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
-                } transition-colors`}
+                      ? 'bg-transparent hover:bg-gray-800 text-gray-200 border-gray-600 hover:border-gray-500'
+                      : 'bg-white hover:bg-gray-50 text-gray-800 border-gray-300 hover:border-gray-400 shadow-sm'
+                }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -118,7 +118,7 @@ const SkillsSection = ({ darkMode }) => {
           </div>
         </div>
         
-        {/* Skill Items - Modified to remove percentages */}
+        {/* Skill Items - Modified to remove button-like appearance */}
         <motion.div
           key={activeCategory}
           variants={containerVariants}
@@ -131,10 +131,9 @@ const SkillsSection = ({ darkMode }) => {
             <motion.div
               key={skill.name}
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} flex items-center justify-center shadow-md`}
+              className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800/50 border border-gray-700' : 'bg-gray-50 border border-gray-200'} flex items-center justify-center`}
             >
-              <span className="font-medium text-center">{skill.name}</span>
+              <span className="font-medium text-center text-sm md:text-base">{skill.name}</span>
             </motion.div>
           ))}
         </motion.div>

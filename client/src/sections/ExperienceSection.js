@@ -1,22 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
+import { useTheme } from '../components/ThemeProvider';
+import { theme, getThemeClasses } from '../theme';
 
-const ExperienceSection = ({ darkMode }) => {
+const ExperienceSection = () => {
+  const { darkMode } = useTheme();
   const experiences = [
     {
       "id": 1,
-      "role": "Head Intern of Digital Innovation",
+      "role": "Innovation Engineer (Part Time)",
       "company": "Ecolab",
       "period": "March 2025 - Present",
       "location": "Remote (During School) & On-Site (Summer)",
       "description": "Lead AI-driven innovation projects, specializing in Generative AI Engineering and full-stack development. Work part-time remotely during the school year and will lead a team of interns on a high-impact project during the summer.",
       "achievements": [
-        "Promoted to Head Intern of Digital Innovation after a stellar first internship.",
+        "Promoted to Innovation Engineer after a stellar first internship.",
         "Developed AI prototypes that were demoed to Ecolab’s Board of Directors.",
         "Helped define the innovation process within the company, working closely with senior leadership.",
         "Created full-stack AI-driven applications to optimize business operations.",
-        "Will lead a team of interns on a summer project expected to be presented to top executives."
+        "Led projects to be presented to top executives and customers, with high impact and visibility with a short timeframe."
       ],
       "technologies": ["Python", "Azure", "TensorFlow", "OpenAI API", "Flask", "React", "Node.js", "Docker", "MySQL"]
     },
@@ -53,20 +56,25 @@ const ExperienceSection = ({ darkMode }) => {
   ];
 
   return (
-    <section 
-      id="experience" 
-      className={`py-24 ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}
+    <section
+      id="experience"
+      className={getThemeClasses(
+        theme.styles.section.base,
+        theme.styles.section,
+        darkMode
+      )}
     >
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          {...theme.animations.fadeInUp}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
-          <div className={`h-1 w-20 mx-auto ${darkMode ? 'bg-blue-500' : 'bg-blue-600'}`}></div>
+          <h2 className={theme.styles.text.heading.primary}>Experience</h2>
+          <div className={getThemeClasses(
+            theme.styles.divider.base,
+            theme.styles.divider,
+            darkMode
+          )}></div>
           <p className="mt-6 max-w-2xl mx-auto text-lg opacity-90">
             My professional journey and work experience in the software development industry.
           </p>
@@ -75,8 +83,12 @@ const ExperienceSection = ({ darkMode }) => {
         {/* Experience Timeline */}
         <div className="relative">
           {/* Timeline Line */}
-          <div 
-            className={`absolute left-0 md:left-1/2 h-full w-0.5 ${darkMode ? 'bg-gray-700' : 'bg-gray-300'} transform -translate-x-1/2`}
+          <div
+            className={getThemeClasses(
+              'absolute left-0 md:left-1/2 h-full w-0.5 transform -translate-x-1/2',
+              { light: 'bg-gray-300', dark: 'bg-gray-700' },
+              darkMode
+            )}
           ></div>
           
           {/* Experience Items */}
@@ -85,32 +97,38 @@ const ExperienceSection = ({ darkMode }) => {
               <div key={exp.id} className="relative">
                 {/* Timeline Dot */}
                 <motion.div
-                initial={{ scale: 0, x: '-50%' }}
-                whileInView={{ scale: 1, x: '-50%' }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className={`absolute left-0 md:left-1/2 w-5 h-5 rounded-full border-4 ${
-                  darkMode 
-                  ? 'bg-gray-900 border-blue-500' 
-                  : 'bg-white border-blue-600'
-                } top-0 z-10`}
-              ></motion.div>
+                  initial={{ scale: 0, x: '-50%' }}
+                  whileInView={{ scale: 1, x: '-50%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className={getThemeClasses(
+                    'absolute left-0 md:left-1/2 w-5 h-5 rounded-full border-4 top-0 z-10',
+                    { light: 'bg-white border-blue-600', dark: 'bg-gray-900 border-blue-500' },
+                    darkMode
+                  )}
+                ></motion.div>
                 
                 {/* Experience Card */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
+                  {...theme.animations.fadeInUp}
+                  transition={{ ...theme.animations.fadeInUp.transition, delay: 0.3 }}
                   className={`md:w-5/12 ${
                     index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto md:pl-0 pl-8'
                   }`}
                 >
-                  <div 
-                    className={`p-6 rounded-xl shadow-lg ${darkMode ? 'bg-gray-900' : 'bg-white'}`}
+                  <div
+                    className={getThemeClasses(
+                      'p-6 rounded-xl shadow-lg',
+                      { light: 'bg-white', dark: 'bg-gray-900' },
+                      darkMode
+                    )}
                   >
                     <h3 className="text-xl font-bold mb-1">{exp.role}</h3>
-                    <h4 className={`text-lg ${darkMode ? 'text-blue-400' : 'text-blue-600'} mb-3`}>
+                    <h4 className={getThemeClasses(
+                      'text-lg mb-3',
+                      { light: 'text-blue-600', dark: 'text-blue-400' },
+                      darkMode
+                    )}>
                       {exp.company}
                     </h4>
                     
@@ -138,11 +156,13 @@ const ExperienceSection = ({ darkMode }) => {
                     
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, i) => (
-                        <span 
-                          key={i} 
-                          className={`px-2 py-1 text-xs rounded-full ${
-                            darkMode ? 'bg-gray-800 text-blue-300' : 'bg-gray-200 text-blue-700'
-                          }`}
+                        <span
+                          key={i}
+                          className={getThemeClasses(
+                            'px-2 py-1 text-xs rounded-full',
+                            { light: 'bg-gray-200 text-blue-700', dark: 'bg-gray-800 text-blue-300' },
+                            darkMode
+                          )}
                         >
                           {tech}
                         </span>

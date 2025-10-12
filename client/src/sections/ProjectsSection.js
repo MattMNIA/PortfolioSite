@@ -11,22 +11,22 @@ const ProjectsSection = () => {
   const projects = [
     {
       "id": 1,
+      "title": "FERB",
+      "description": "Open Source 6DOF Robotic Arm with Closed Loop Controls.",
+      "longDescription": "I constructed a robotic arm based on the open-source design \"Arctos\". The arm features six degrees of freedom and is controlled using a motion service made in python, with closed-loop feedback from rotary encoders. I designed and 3D printed custom mounts for a camera, and suction cups to securely mount the arm on a variety of surfaces, and developed the control algorithms to achieve precise movement and positioning.",
+      "image": "client/public/FERB.JPG",
+      "techStack": ["C++", "Python", "PyCAN", "Microcontrollers"],
+      "githubLink": "https://github.com/MattMNIA/ArctosArmController",
+      "liveLink": "ferb.mattmn.com"
+    },
+    {
+      "id": 2,
       "title": "Camera-Based Golf Simulator",
       "description": "Computer vision application for tracking golf ball trajectory and speed.",
       "longDescription": "Developed a Python and OpenCV-based application that applies multiple filters to identify a golf ball in each frame of a slow-motion video. Utilized ball location data to calculate the trajectory and speed immediately after impact.",
       "image": "client/public/golf_simulator.jpg",
       "techStack": ["Python", "OpenCV"],
       "githubLink": "https://github.com/MattMNIA/Golf_Simulator",
-      "liveLink": ""
-    },
-    {
-      "id": 2,
-      "title": "Automated Scheduling System",
-      "description": "Automated scheduling tool for improving efficiency at Bear Paddle Swim School.",
-      "longDescription": "Created a Python-based automation system using Google Sheets API to streamline scheduling tasks, identify overbooked classes, and improve service quality by minimizing human error.",
-      "image": "client/public/schedule_system.png",
-      "techStack": ["Python", "Google Sheets API"],
-      "githubLink": "https://github.com/MattMNIA/scheduling-system",
       "liveLink": ""
     },
     {
@@ -85,7 +85,7 @@ const ProjectsSection = () => {
               { light: 'bg-white shadow-lg hover:shadow-xl', dark: 'bg-gray-900 shadow-lg hover:shadow-xl' },
               darkMode
             )}>
-              <div className="h-48 overflow-hidden">
+              <div className="h-64 overflow-hidden">
                 <img
                   src={`/${project.image.split('/').pop()}`}
                   alt={project.title}
@@ -141,6 +141,20 @@ const ProjectsSection = () => {
                   >
                     {expandedProject === project.id ? 'Show Less' : 'Learn More'}
                   </button>
+                  {project.liveLink && (
+                    <a
+                      href={`https://${project.liveLink}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={getThemeClasses(
+                        'px-4 py-2 text-sm rounded-lg font-medium transition-colors',
+                        { light: 'bg-blue-600 hover:bg-blue-700 text-white', dark: 'bg-blue-500 hover:bg-blue-600 text-white' },
+                        darkMode
+                      )}
+                    >
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

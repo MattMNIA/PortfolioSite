@@ -231,7 +231,7 @@ const HomePage = () => {
               </motion.a>
             </div>
             <motion.a
-              href="/Matthew_Morgan_Resume.pdf"
+              href="/Matthew_Morgan_Resume_Online_F26.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

@@ -9,6 +9,22 @@ const ExperienceSection = () => {
   const experiences = [
     {
       "id": 1,
+      "role": "Software Engineering Intern – Posters Team",
+      "company": "Apple",
+      "period": "May 2026 - August 2026",
+      "location": "San Diego, CA",
+      "description": "Built an extension point letting independently-owned processes contribute data to a host process, prototyped a new Wallpapers user flow, and expanded an org-wide live-configuration tool used by designers.",
+      "achievements": [
+        "Designed an extension point allowing independently-owned processes to contribute data to a host process: a public protocol, host-side plumbing, a reference implementation, unit test suites for both new components, and an adopter-facing integration guide.",
+        "Prototyped a new user flow for interacting with Wallpapers.",
+        "Drove adoption in another team's codebase, including a background job to migrate data for existing installs.",
+        "Surfaced ~20 tuning parameters through an internal live-configuration tool so designers could iterate on-device in real time without a rebuild.",
+        "Extended the tuning tool itself, which is used across the organization, to render inline documentation per parameter, making the controls self-describing."
+      ],
+      "technologies": []
+    },
+    {
+      "id": 2,
       "role": "Innovation Engineer (Part Time)",
       "company": "Ecolab",
       "period": "March 2025 - Present",
@@ -24,7 +40,7 @@ const ExperienceSection = () => {
       "technologies": ["Python", "Azure", "TensorFlow", "OpenAI API", "Flask", "React", "Node.js", "Docker", "MySQL"]
     },
     {
-      "id": 1,
+      "id": 3,
       "role": "Artificial Intelligence Intern",
       "company": "Ecolab",
       "period": "May 2024 - March 2025",
@@ -40,7 +56,7 @@ const ExperienceSection = () => {
       "technologies": ["Python", "Scikit-Learn", "TensorFlow", "Pandas", "NumPy", "Flask"]
     },
     {
-      "id": 2,
+      "id": 4,
       "role": "Deck Specialist",
       "company": "Bear Paddle Swim School",
       "period": "April 2022 - September 2023",

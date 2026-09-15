@@ -39,10 +39,10 @@ echo -e "${YELLOW}Building...${NC}"
 echo -e "${GREEN}Build OK ($(find "$BUILD_DIR" -type f | wc -l) files)${NC}"
 
 echo -e "${YELLOW}Uploading release ${RELEASE}...${NC}"
-ssh "${DEPLOY_USER}@${DEPLOY_HOST}" "mkdir -p /srv/${APP_NAME}/releases/${RELEASE}"
-rsync -az --delete --info=stats1 \
-    "${BUILD_DIR}/" \
-    "${DEPLOY_USER}@${DEPLOY_HOST}:/srv/${APP_NAME}/releases/${RELEASE}/"
+# tar-over-ssh rather than rsync: Git Bash on Windows has no rsync.
+tar czf - -C "$BUILD_DIR" . | ssh "${DEPLOY_USER}@${DEPLOY_HOST}" \
+    "mkdir -p /srv/${APP_NAME}/releases/${RELEASE} \
+     && tar xzf - -C /srv/${APP_NAME}/releases/${RELEASE}"
 
 echo -e "${YELLOW}Activating...${NC}"
 ssh "${DEPLOY_USER}@${DEPLOY_HOST}" "activate-release ${APP_NAME} ${RELEASE}"

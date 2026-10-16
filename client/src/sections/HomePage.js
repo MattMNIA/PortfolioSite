@@ -259,8 +259,7 @@ const HomePage = () => {
               { light: 'border-blue-600 bg-blue-300', dark: 'border-blue-500 bg-blue-400' },
               darkMode
             )}>
-              {/* <img src="/myAvatar.svg" alt="My Avatar" className="w-full h-full object-cover" /> */}
-              MM
+              {<img src="client/public/Apple_Photo_Blue_Logo.jpg" alt="My Photo" className="w-full h-full object-cover"/>}
             </div>
           </motion.div>
         </div>

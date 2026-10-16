@@ -178,6 +178,8 @@ const HomePage = () => {
                     ' Data Engineer.',
                     1000,
                     ' Data Analyst.',
+                    1000,
+                    ' IOS Developer.',
                     1000
                   ]}
                   wrapper="div"

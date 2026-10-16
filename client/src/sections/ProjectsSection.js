@@ -11,6 +11,14 @@ const ProjectsSection = () => {
   const projects = [
     {
       "id": 1,
+      "title": "Whiteboard Drawing Machine",
+      "description": "Open Source 6DOF Robotic Arm with Closed Loop Controls.",
+      "longDescription": "I built a two-stepper polar plotter that draws on a 5×3 ft whiteboard; ESP32 firmware converts Cartesian paths to appropriate belt lengths in real time with a holding line error < 0.5 mm. It includes an image-to-toolpath pipeline that turns any photo into marker strokes via crosshatching and tonal shading, then reorders paths to cut pen-up travel 92% and total draw time from ~180 min to ~15 min. It uses a webapp front end and job queue for submitting drawings from anywhere; jobs stream to the device over MQTT with buffering and mid-job resume so Wi-Fi drops don't ruin a drawing.",
+      "image": "client/public/whiteboard-plotter-mona-lisa.jpg",
+      "techStack": ["C++", "Python", "OpenCV", "Microcontrollers, MQTT"],
+    },
+    {
+      "id": 2,
       "title": "FERB",
       "description": "Open Source 6DOF Robotic Arm with Closed Loop Controls.",
       "longDescription": "I constructed a robotic arm based on the open-source design \"Arctos\". The arm features six degrees of freedom and is controlled using a motion service made in python, with closed-loop feedback from rotary encoders. I designed and 3D printed custom mounts for a camera, and suction cups to securely mount the arm on a variety of surfaces, and developed the control algorithms to achieve precise movement and positioning.",
@@ -20,7 +28,7 @@ const ProjectsSection = () => {
       "liveLink": "ferb.mattmn.com"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Camera-Based Golf Simulator",
       "description": "Computer vision application for tracking golf ball trajectory and speed.",
       "longDescription": "Developed a Python and OpenCV-based application that applies multiple filters to identify a golf ball in each frame of a slow-motion video. Utilized ball location data to calculate the trajectory and speed immediately after impact.",
@@ -30,7 +38,7 @@ const ProjectsSection = () => {
       "liveLink": ""
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Sudoku Solver",
       "description": "Computer vision-based Sudoku solver using OCR and backtracking.",
       "longDescription": "Utilized OpenCV to identify and isolate individual cells in a Sudoku puzzle. Applied EasyOCR to recognize digits and implemented a backtracking algorithm to efficiently solve the puzzle.",
@@ -40,7 +48,7 @@ const ProjectsSection = () => {
       "liveLink": ""
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "CourseCritic",
       "description": "A RateMyProfessor alternative that helps students make informed course decisions.",
       "longDescription": "Developed a full-stack web application that allows college students to view and share course ratings, helping them make better enrollment decisions. The platform features user-submitted reviews, professor ratings, and course difficulty analysis. Data was collected using a Selenium web scraper and stored in a MySQL database for efficient querying.",

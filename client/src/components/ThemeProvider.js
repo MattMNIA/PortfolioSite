@@ -8,7 +8,9 @@ export const ThemeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(() => {
     // Check for saved theme preference or default to dark
     const saved = localStorage.getItem('theme');
-    return saved ? JSON.parse(saved) : true;
+    if (saved === 'true' || saved === 'dark') return true;
+    if (saved === 'false' || saved === 'light') return false;
+    return true;
   });
 
   // Apply theme to document

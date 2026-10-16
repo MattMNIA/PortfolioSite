@@ -255,11 +255,11 @@ const HomePage = () => {
             className="flex justify-center"
           >
             <div className={getThemeClasses(
-              'w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 flex items-center justify-center text-5xl font-bold',
+              'w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 flex items-center justify-center text-5xl font-bold',
               { light: 'border-blue-600 bg-blue-300', dark: 'border-blue-500 bg-blue-400' },
               darkMode
             )}>
-              {<img src="client\public\Apple_Photo_Blue_Logo.jpg" alt="My Photo" className="w-full h-full object-cover"/>}
+              {<img src="/Apple_Photo_Blue_Logo.jpg" alt="My Photo" className="w-full h-full object-cover"/>}
             </div>
           </motion.div>
         </div>
